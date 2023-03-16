@@ -1,2 +1,3 @@
 #!/bin/bash
-gcc $CFIL -o cisfun
+gcc $CFIL -o cisfn
+
