@@ -3,8 +3,8 @@
 #include <stdio.h>
 /* more headers goes there */
 
-/* betty style doc for function main goes there 
- * main description : this the task 0
+/**
+ * negative or positive programe
  */
 int main(void)
 {
@@ -17,11 +17,11 @@ int main(void)
 	{
 	    printf("%d is positive ", n);
 	}
-	else if (n <0)
+	else if (n < 0)
 	{
 	    printf("%d is negative ", n);
 	}
-	else if (n ==0)
+	else 
 	{
 	    printf("%d is zero ", n);
 	}
