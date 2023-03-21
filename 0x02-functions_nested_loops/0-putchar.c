@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
- * main : print _puthcar with new line 
- * RETURN : return 0
+ * main - Entry point for random number
+ *
+ * Return: Always 0 (Success)
  */
 
 int main(void)
