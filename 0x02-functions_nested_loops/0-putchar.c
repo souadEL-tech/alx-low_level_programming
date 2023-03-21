@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include
 /**
  * main : print _puthcar with new line 
  * RETURN : return 0
