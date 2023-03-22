@@ -5,18 +5,15 @@
 * Return: 1 if c is lowercase , 0 if c is upsercase
 */
 
-int _islower(int c);
+int _islower(int c)
 {
-int i;
-
-i = islower(c);
-if (i != 0)
-{
+if (c >= 'a' && c <= 'z')
 return (1);
-}
-else
-{
+
+else if (c >= 'A' &&  c <= 'Z')
 return (0);
-}
+
+_putchar('\n');
+return (0);
 
 }
