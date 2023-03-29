@@ -1,23 +1,34 @@
-#include "main.h"
 /**
- * _atoi - convert a string to an integer.
- * @s: pointer to string
+ * _atoi - convert a string representation of an integer to an integer
  *
- * Return: integer value of string, or 0 if no digits are found
+ * @s: string possibly containing an integer
+ *
+ * Return: first integer in string
  */
 int _atoi(char *s)
 {
-int sign = 1;
-int result = 0;
-while (*s)
-{
-if (*s == '-')
-sign = -sign;
-else if (*s >= '0' && *s <= '9')
-result = result * 10 + (*s - '0');
-else if (result > 0)
-break;
-s++;
-}
-return (sign *result);
+	int signs = 1;
+	unsigned int sum = 0;
+	int final = 0;
+
+	for (; *s != '\0'; s++)
+	{
+		if (*s == '-')
+			signs *= -1;
+		else if (*s >= '0' && *s <= '9')
+			break;
+	}
+	while (*s >= '0' && *s <= '9')
+	{
+		sum *= 10;
+		sum += *s - '0';
+		s++;
+	}
+
+	if (signs == -1)
+		final = -sum;
+	else
+		final = sum;
+
+	return (final);
 }
