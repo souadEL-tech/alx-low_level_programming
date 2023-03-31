@@ -18,6 +18,6 @@ j++;
 i++;
 }
 
-dest[i] = '\0';
+dest[j] = '\0';
 return (dest);
 }
