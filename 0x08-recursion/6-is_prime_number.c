@@ -6,11 +6,10 @@
  */
 int is_prime_number(int n)
 {
-	float ret = (int)n;
 
-	if ((int)ret % 2 != 0)
+	if (n % 2 == 0)
 	{
-		return (1);
+		return (0);
 	}
-	return (0);
+	return (1);
 }
