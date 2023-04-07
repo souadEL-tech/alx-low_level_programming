@@ -6,7 +6,9 @@
  */
 int is_prime_number(int n)
 {
-	if (n % 2 != 0)
+	float ret = (int)n;
+
+	if ((int)ret % 2 != 0)
 	{
 		return (1);
 	}
