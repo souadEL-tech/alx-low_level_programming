@@ -33,7 +33,7 @@ if (ptr == NULL)
 return (NULL);
 }
 
-for (int p2 = 0; p2 < (s1i + 1); p2++)
+for (p2 = 0; p2 < (s1i + 1); p2++)
 {
 ptr[p2] = s1[p2];
 }
