@@ -31,9 +31,10 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (i = 0; i <= len1; i++)
+	while (i < len1)
 	{
 		ptr[i] = s1[i];
+		i++;
 	}
 
 	while (i < (len1 + len2))
