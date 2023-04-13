@@ -35,12 +35,13 @@ char *str_concat(char *s1, char *s2)
 	{
 		ptr[i] = s1[i];
 	}
-	while (i <= (len1 + len2))
+
+	while (i < (len1 + len2))
 	{
 		ptr[i] = s2[j];
 		j++;
 		i++;
 	}
-	ptr[len2 + 1] = '\0';
+	ptr[i] = '\0';
 	return (ptr);
 }
