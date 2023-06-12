@@ -1,25 +1,28 @@
 #include <stdlib.h>
 #include "main.h"
-/*
- * create_array - function
- * @c: parameter 2
+
+/**
+ * *create_array - creates an array of chars
+ * @size: parametre 1
+ * @c: char
  * Return: return ptr
  */
-
-char *create_array(unsigned int size, char c)
+char * create_array(unsigned int size, char c)
 {
-	unsigned int comp = 0;
-	char *ptr = malloc(sizeof(char) * size);
+	unsigned int i = 0;
+	char *ptr;
 
+	ptr = (char *) malloc(sizeof(char) * size);
 	if (ptr == NULL)
 	{
-		return (ptr);
+		return (0);
 	}
-	while (ptr)
+	while (i < size)
 	{
-		ptr[comp] = c;
-		comp++;
+		*(ptr + i) = c;
+		i++;
 	}
 
+	*(ptr + i) = '\0';
 	return (ptr);
 }
