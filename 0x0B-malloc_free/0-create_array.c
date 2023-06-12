@@ -1,8 +1,7 @@
 #include <stdlib.h>
 #include "main.h"
 /*
- * reate_array -allocat array of char
- * @size: parameter 1
+ * create_array - function
  * @c: parameter 2
  * Return: return ptr
  */
@@ -16,7 +15,7 @@ char *create_array(unsigned int size, char c)
 	{
 		return (ptr);
 	}
-	while (ptr[comp] != '\0')
+	while (ptr)
 	{
 		ptr[comp] = c;
 		comp++;
