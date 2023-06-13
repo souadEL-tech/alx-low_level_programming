@@ -24,7 +24,7 @@ char *_strdup(char *str)
 		parcour++;
 	}
 
-	ptr = (char *) malloc(sizeof(char) * size);
+	ptr = (char *) malloc(sizeof(char) * (size + 1));
 	if (ptr == NULL)
 		return (NULL);
 
