@@ -15,8 +15,6 @@ char *str_concat(char *s1, char *s2)
 	int parcour1 = 0;
 	int parcour2 = 0;
 
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
 	while (*(s1 + parcour) != '\0')
 	{
 		parcour++;
