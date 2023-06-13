@@ -29,12 +29,16 @@ char *str_concat(char *s1, char *s2)
 	ptr = (char *) malloc(sizeof(char) * (size_str1 + size_str2 + 1));
 	if (ptr == NULL)
 		return (NULL);
+	if (s1 == NULL)
+		*(ptr + parcour2) = *s1;
 	while (parcour2 < size_str1)
 	{
 		*(ptr + parcour2) = *(s1 + parcour2);
 		parcour2++;
 	}
 	parcour = 0;
+	if (s2 == NULL)
+		*(ptr + parcour2) = *s2;
 	while (parcour < size_str2)
 	{
 		*(ptr + parcour2) = *(s2 + parcour);
