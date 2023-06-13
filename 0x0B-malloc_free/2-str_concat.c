@@ -12,8 +12,7 @@ char *str_concat(char *s1, char *s2)
 	int size_str1 = 0;
 	int size_str2 = 0;
 	int parcour = 0;
-	int parcour1 = 0;
-	int parcour2 = 0;
+	int parcour1 = 0, parcour2 = 0;
 
 	while (*(s1 + parcour) != '\0')
 	{
@@ -29,9 +28,7 @@ char *str_concat(char *s1, char *s2)
 	ptr = (char *) malloc(sizeof(char) * (size_str1 + size_str2 + 1));
 	if (ptr == NULL)
 		return (NULL);
-	if (s1 == NULL)
-		*(ptr + parcour2) = *s1;
-	else
+	if (s1)
 	{
 		while (parcour2 < size_str1)
 		{
@@ -40,9 +37,7 @@ char *str_concat(char *s1, char *s2)
 		}
 	}
 	parcour = 0;
-	if (s2 == NULL)
-		*(ptr + parcour2) = *s2;
-	else
+	if (s2)
 	{
 		while (parcour < size_str2)
 		{
