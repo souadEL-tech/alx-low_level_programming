@@ -27,7 +27,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1)
 	{
-		while (*(s1 + str1) != '\0')
+		while (*(s1 + str1))
 		{
 			*(ptr + str1) = *(s1 + str1);
 			str1++;
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2)
 	{
-		while (*(s2 + str2) != '\0')
+		while (*(s2 + str2))
 		{
 			*(ptr + str1) = *(s2 + str2);
 			 str1++;
