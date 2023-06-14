@@ -1,51 +1,50 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
- * *str_concat -concatenates two strings
- * @s1: str 1
+ * *str_concat -concate 2 string
+ * @s1: string 1
  * @s2: string 2
  * Return: return ptr
  */
+
+
 char *str_concat(char *s1, char *s2)
 {
 	char *ptr;
-	int size_str1 = 0;
-	int size_str2 = 0;
-	int parcour = 0;
-	int parcour1 = 0, parcour2 = 0;
+	int size_s1 = 0, size_s2 = 0;
+	int str1 = 0, str2 = 0;
 
-	while (*(s1 + parcour) != '\0')
-	{
-		parcour++;
-		size_str1++;
-	}
-	while (*(s2 + parcour1) != '\0')
-	{
-		parcour1++;
-		size_str2++;
-	}
+	while (*(s1 + size_s1))
+		size_s1++;
 
-	ptr = (char *) malloc(sizeof(char) * (size_str1 + size_str2 + 1));
+	while (*(s2 + size_s2))
+		size_s2++;
+
+	ptr = (char *) malloc(sizeof(char) * (size_s1 + size_s2 + 1));
 	if (ptr == NULL)
 		return (NULL);
+
 	if (s1)
 	{
-		while (parcour2 < size_str1)
+		while (*(s1 + str1) != '\0')
 		{
-			*(ptr + parcour2) = *(s1 + parcour2);
-			parcour2++;
+			*(ptr + str1) = *(s1 + str1);
+			str1++;
 		}
 	}
-	parcour = 0;
+
 	if (s2)
 	{
-		while (parcour < size_str2)
+		while (*(s2 + str2) != '\0')
 		{
-			*(ptr + parcour2) = *(s2 + parcour);
-			parcour++;
-			parcour2++;
+			*(ptr + str1) = *(s2 + str2);
+			 str1++;
+			 str2++;
 		}
 	}
-	*(ptr + parcour2) = '\0';
+
+	*(ptr + str1) = '\0';
 	return (ptr);
+
 }
