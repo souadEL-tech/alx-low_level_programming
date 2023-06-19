@@ -1,5 +1,5 @@
-#ifndef OBJECT_LIKE_MACRO_H
-#define OBJECT_LIKE_MACRO_H
+#ifndef 1-PI
+#define 1-PI
 
 #define PI 3.14159265359
 
