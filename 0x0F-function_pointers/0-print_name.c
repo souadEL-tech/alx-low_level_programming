@@ -3,18 +3,6 @@
 #include <stdlib.h>
 
 
-void (*f)(char *fname)
-{
-	int i = 0;
-
-	while (fname[i])
-	{
-		_putchar(fname[i]);
-		i++;
-	}
-
-}
-
 /**
  * print_name -function that print a name
  * @name: string para
@@ -29,6 +17,4 @@ void print_name(char *name, void (*f)(char *))
 		return;
 
 	 f(name);
-
-
 }
