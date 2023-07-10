@@ -1,5 +1,7 @@
 #include "main.h"
 #include "math.h"
+#include <stddef.h>
+
 /**
  * binary_to_uint - the name of the function
  * @b: parameter
@@ -11,8 +13,9 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int i = 0, j = 0;
 	unsigned int decimal = 0;
 
-	if (b != '0' || b != '1' || b == NULL)
-		return (NULL);
+	if (*b != '0' || *b != '1' || b == NULL)
+		return (0);
+
 	while (b[i] != '\0')
 	{
 		i++;
@@ -20,9 +23,9 @@ unsigned int binary_to_uint(const char *b)
 
 	while (b[j] != '\0')
 	{
-		decimal = decimal +(b[j] * (pow(2 , i)));
+		decimal = decimal + (b[j] * (pow(2, i)));
 		i++;
 		j++;
- 	}
+	}
 	return (decimal);
 }
