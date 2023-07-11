@@ -1,8 +1,32 @@
 #include "main.h"
-#include "math.h"
-#include <stddef.h>
+#include <stdio.h>
 
 /**
+ * power -the name of function
+ * @topow: parameter 1
+ * @i: parameter 2
+ * Return: return unsigned int
+ */
+
+unsigned int power(unsigned int topow, unsigned int i)
+{
+	unsigned int ooss = 1;
+
+	while (i > 0)
+	{
+		ooss *= topow;
+		i--;
+	}
+	return (ooss);
+}
+
+
+
+
+
+
+/**
+ *
  * binary_to_uint - the name of the function
  * @b: parameter
  * Return: return unsigned int
@@ -23,7 +47,7 @@ unsigned int binary_to_uint(const char *b)
 
 	while (b[j] != '\0')
 	{
-		decimal = decimal + (b[j] * (pow(2, i)));
+		decimal = decimal + (b[j] * (power(2, i)));
 		i++;
 		j++;
 	}
