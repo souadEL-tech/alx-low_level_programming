@@ -26,8 +26,7 @@ unsigned int power(unsigned int topow, unsigned int i)
 
 
 /**
- *
- * binary_to_uint - the name of the function
+ * binary_to_uint -the name of the function
  * @b: parameter
  * Return: return unsigned int
  */
@@ -35,7 +34,7 @@ unsigned int power(unsigned int topow, unsigned int i)
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i = 0, j = 0;
-	unsigned int decimal = 0;
+	unsigned int decimal = 1;
 
 	if (*b != '0' || *b != '1' || b == NULL)
 		return (0);
@@ -44,12 +43,19 @@ unsigned int binary_to_uint(const char *b)
 	{
 		i++;
 	}
-
 	while (b[j] != '\0')
 	{
-		decimal = decimal + (b[j] * (power(2, i)));
-		i++;
-		j++;
+		if (b[j] == '0')
+		{
+			i--;
+			j++;
+		}
+		else
+		{
+			decimal *= (power(2, i));
+			i--;
+			j++;
+		}
 	}
 	return (decimal);
 }
