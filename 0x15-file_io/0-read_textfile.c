@@ -33,17 +33,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	ptr_ml = malloc(letters * sizeof(char));
 	lenght = read(FD, ptr_ml, letters);
-
-	if (lenght == 0)
-		return (0);
-
-	write(1, ptr_ml, letters);
-
 	if (lenght != letters)
 	{
 		return (0);
 	}
 
+	write(1, ptr_ml, letters);
 
 	return (lenght);
 
