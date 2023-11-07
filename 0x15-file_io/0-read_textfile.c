@@ -19,17 +19,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int FD;
 	char *ptr_ml;
 	size_t lenght;
+	size_t w_lenght;
 
 	if (filename == NULL)
 		return (0);
-
-
-	FD = open(filename, O_RDONLY);
-	if (FD < 0)
-	{
-		return (0);
-	}
-
 
 	ptr_ml = malloc(letters * sizeof(char));
 	if (ptr_ml == NULL)
@@ -37,14 +30,20 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
+	FD = open(file_name, O_RDONLY);
 	lenght = read(FD, ptr_ml, letters);
-	if (lenght != letters)
+	w_lenght = write(STDOIT_FILENO, ptr_ml, letters);
+	
+	if (lenght != letters || w_lenght == 0)
 	{
+		free(ptr_ml);
 		return (0);
+
 	}
 
-	write(1, ptr_ml, letters);
+	close(FD);
+	free(ptr_ml);
 
-	return (lenght);
+	return (w_lenght);
 
 }
