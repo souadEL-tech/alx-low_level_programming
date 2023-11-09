@@ -40,7 +40,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	w_buffer = write(STDOUT_FILENO, buffer, READ);
-	if (w_buffer < 0)
+	if (w_buffer < 0 || w_buffer != READ)
 	{
 		free(buffer);
 		return (0);
