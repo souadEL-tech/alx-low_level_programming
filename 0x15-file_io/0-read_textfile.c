@@ -6,8 +6,8 @@
 /**
  * read_textfile - function that reads a text file and prints it.
  * @filename: file name
- * @letters: byte to read
- * Return: eturns the actual number of letters it could read and print
+ * @letters: bytes to read
+ * Return: returns the actual number of letters it could read and print
  */
 
 
@@ -15,35 +15,36 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-
 	int FD;
-	char *ptr_ml;
-	size_t lenght;
-	size_t w_lenght;
+	char *buffer;
+	ssize_t w_buffer;
 
 	if (filename == NULL)
-		return (0);
-
-	ptr_ml = malloc(letters * sizeof(char));
-	if (ptr_ml == NULL)
 	{
 		return (0);
 	}
 
-	FD = open(filename, O_RDONLY);
-	lenght = read(FD, ptr_ml, letters);
-	w_lenght = write(STDOUT_FILENO, ptr_ml, letters);
-	
-	if (lenght != letters || w_lenght == 0)
+	FD = open(filename, O_WRONLY);
+	if (FD < 0)
 	{
-		free(ptr_ml);
 		return (0);
+	}
 
+	buffer = malloc(letters * sizeof(char));
+	if (buffer == NULL)
+	{
+		return (0);
+	}
+
+	w_buffer = write(FD, buffer, letters);
+	if (w_buffer < 0)
+	{
+		free(buffer);
+		return (0);
 	}
 
 	close(FD);
-	free(ptr_ml);
+	free(buffer);
 
-	return (w_lenght);
-
+	return (w_buffer);
 }
