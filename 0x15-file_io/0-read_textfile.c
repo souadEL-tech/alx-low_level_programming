@@ -30,9 +30,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	FD = open(file_name, O_RDONLY);
+	FD = open(filename, O_RDONLY);
 	lenght = read(FD, ptr_ml, letters);
-	w_lenght = write(STDOIT_FILENO, ptr_ml, letters);
+	w_lenght = write(STDOUT_FILENO, ptr_ml, letters);
 	
 	if (lenght != letters || w_lenght == 0)
 	{
