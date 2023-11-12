@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 
 /**
@@ -34,14 +36,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	FD = open(filename, O_WRONLY);
 	READ = read(FD, buffer, letters);
 	w_buffer = write(STDOUT_FILENO, buffer, READ);
-	if (FD < 0 || READ < 0 || w_buffer < 0 || w_buffer != READ)
+	if (FD == -1 || READ == -1 || w_buffer == -1 || w_buffer != READ)
 	{
 		free(buffer);
 		return (0);
 	}
 
-	close(FD);
 	free(buffer);
+	close(FD);
 
 	return (w_buffer);
 }
