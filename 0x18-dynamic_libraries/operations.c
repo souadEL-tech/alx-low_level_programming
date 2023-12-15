@@ -21,13 +21,14 @@ int sub(int n1, int n2)
 {
 	return (n1 - n2);
 }
-/**
- * mul -function
- * @num1: parametter
- * @num2: parametter
- * Retunr: int
- */
 
+
+/**
+ * mul -calculate mul
+ * @num1: number
+ * @num2: number
+ * Return: retunr mul of 2 variable
+ */
 
 int mul(int num1, int num2)
 {
@@ -45,6 +46,12 @@ int div(int number1, int number2)
 {
 	return (number1 / number2);
 }
+/**
+ * mod -calulate modulo
+ * @i: int val
+ * @j: int val
+ * Return: return modulo of 2 variable
+ */
 
 int mod(int i, int j)
 {
